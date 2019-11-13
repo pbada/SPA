@@ -1,0 +1,166 @@
+@import "./styles/reset.scss";
+@import "./styles/utils.scss";
+
+.main {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.button {      
+  color: #fff;
+  padding: 8px;
+  font-size: 14px;
+  border-left: 1px solid rgba(151, 151, 151, 0.58);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+  vertical-align: top;
+  border-radius: 10%;
+
+  &.add-button {
+    background-color: $add;
+  }
+
+  &.modify-button {
+    background-color: $modify;
+  }
+
+  &.remove-button {
+    background-color: $remover;
+  }
+
+  &.close-button {
+    position: absolute;
+    width: 45px;
+    height: 46px;
+    top: 20px;
+    right: 20px; 
+    background-color: $close;
+  }
+}
+
+.serch-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 7px;
+
+  &.schedule-modify {
+    input {
+      @include square(7);
+      margin-right: 5px;
+      &:first-child {
+        @include square(1);
+      }
+    }
+  }
+
+  &.schedule-remove {
+    input {
+      @include square(1);
+    }
+    
+    .target-remove {
+      display: inline-block;
+      @include square(8);
+      font-size: 12px;
+      line-height: 46px;
+      color: #bbb;
+    }
+  }
+  
+  input {
+    height: 22px;
+    padding: 12px;
+    outline: 0;    
+    border: 0px;
+    font-size: 18px;
+    vertical-align: top;
+    color: #222;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+
+    &::placeholder {
+      color: #e2e2e2;
+    }
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+
+    .add-button {
+      border-radius: 10% 0 0 10%;
+    }
+
+    .modify-button {
+      border-radius: 0 10% 10% 0;
+    }
+  }
+}
+
+.dim-wraaper {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 20px;
+  -webkit-transform-origin: top;
+  transform-origin: top;
+  overflow: hidden;
+  z-index: 20;
+
+  &.active {
+    display: block;
+
+    .fab-wrapper {
+      max-width: 360px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: .2em;
+
+      .serch-wrapper {
+        max-width: 308px;
+      }
+    }  
+
+    .dim {
+      height: 100%;
+      opacity: 1;
+    }
+  }
+
+  .fab-wrapper {
+    position: relative;
+  }
+
+  .dim {
+    z-index: -1;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.4);
+    transition: opacity 0.5s ease;
+  }
+}
+
+.worklist-wrapper {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  .work-info {
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+    margin: 0;
+    padding: 20px;
+    transition: background 0.2s;
+    background: white;
+    border-bottom: 1px solid #d8d8d8;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.14);
+  }
+}

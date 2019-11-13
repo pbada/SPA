@@ -1,0 +1,11 @@
+$basiclineheight: 18px;
+
+$add: #2f6abe;
+$modify: #a7a5a2;
+$remover: #444857;
+$close: #000000;
+
+@mixin square($size) {
+  $calculated: 22px * $size;
+  width: $calculated;
+}

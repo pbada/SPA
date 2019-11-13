@@ -1,0 +1,23 @@
+{
+  "name": "nsmall-react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd backend && node server.js\" \"cd frontend && npm start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "자격요건 및 우대사항의 충족을위한 어플리케이션 제작",
+  "dependencies": {
+    "concurrently": "^4.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pbada/SPA.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pbada/SPA/issues"
+  },
+  "homepage": "https://github.com/pbada/SPA#readme"
+}
